@@ -20,6 +20,7 @@ class AndersonmachadoApplicationTests {
 		t.setCodigo(1);
 		t.setDisciplina("Java");
 		t.setProfessor("Elberth");
+		t.setIniciada(true);
 		assertEquals((float)100, t.getCalcularSalario());
 	}
 

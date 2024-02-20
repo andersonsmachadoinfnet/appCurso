@@ -5,6 +5,7 @@ public class Turma {
 	private String professor;
 	private String disciplina;
 	private int qtdAlunos = 0;
+	private boolean iniciada = false;
 	
 	public Turma() {
 		qtdAlunos = 0;
@@ -38,6 +39,14 @@ public class Turma {
 	}
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
+	}
+
+	public boolean isIniciada() {
+		return iniciada;
+	}
+
+	public void setIniciada(boolean iniciada) {
+		this.iniciada = iniciada;
 	}
 
 }
