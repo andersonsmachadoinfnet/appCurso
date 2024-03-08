@@ -1,22 +1,26 @@
 package br.anderson.infnet.andersonmachado.model.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Turma {
 	private int codigo;
 	private String professor;
 	private String disciplina;
-	private int qtdAlunos = 0;
+	//private int qtdAlunos = 0;
 	private boolean iniciada = false;
+	private List<Aluno> alunos;
 	
 	public Turma() {
-		qtdAlunos = 0;
+		this.alunos = new ArrayList<Aluno>();// qtdAlunos = 0;
 	}
 	
 	public float getCalcularSalario() {
-		return (100 + (10 * qtdAlunos));
+		return (100 + (10 * getQtdAlunos()));
 	}
 	
 	public int getQtdAlunos() {
-		return qtdAlunos;
+		return alunos.size();
 	}
 	
 	public String getDisciplina() {
@@ -30,6 +34,7 @@ public class Turma {
 	public String getProfessor() {
 		return professor;
 	}
+	
 	public void setProfessor(String professor) {
 		this.professor = professor;
 	}
@@ -49,4 +54,15 @@ public class Turma {
 		this.iniciada = iniciada;
 	}
 
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+
+	//public void setAlunos(List<Aluno> alunos) {
+	//	this.alunos = alunos;
+	//}
+	
+	public void addAluno(Aluno pAluno) {
+		this.alunos.add(pAluno);
+	}
 }
