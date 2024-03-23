@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "3ea5e3a7-b5c3-4fa8-99f4-02861ebce16a",
+		"name": "apiCurso",
+		"description": "API do aplicativo Curso desenvolvido para a disciplina 24E1_3 Desenvolvimento de Servicos Web e Testes com Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33820468"
+	},
+	"item": [
+		{
+			"name": "Externo",
+			"item": [
+				{
+					"name": "Pessoa Faker",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pessoafaker/obter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoafaker",
+								"obter"
+							]
+						},
+						"description": "Obtém dados de uma Pessoa Faker, acessando a API [https://randomuser.me/api/](https://randomuser.me/api/)"
+					},
+					"response": []
+				}
+			],
+			"description": "Métodos exemplo de consumo de uma API externa usando a APICurso."
+		},
+		{
+			"name": "Listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/curso/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"curso",
+						"listar"
+					]
+				},
+				"description": "Obtém a lista de instituição de Cursos"
+			},
+			"response": []
+		},
+		{
+			"name": "Incluir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": -1,\r\n        \"nome\": \"PUC\",\r\n        \"professores\": [\r\n            {\r\n                \"matricula\": 3,\r\n                \"nome\": \"Beltrano\",\r\n                \"endereco\": null,\r\n                \"telefone\": \"444444\"\r\n            }\r\n        ],\r\n        \"endereco\": {\r\n            \"id\": 1,\r\n            \"logradouro\": \"\",\r\n            \"complemento\": \"\",\r\n            \"bairro\": \"Gávea\",\r\n            \"localidade\": \"Rio de Janeiro\",\r\n            \"uf\": \"RJ\",\r\n            \"cep\": \"24500-000\"\r\n        }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/curso/incluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"curso",
+						"incluir"
+					]
+				},
+				"description": "Permite incluir uma instituição de Curso"
+			},
+			"response": []
+		},
+		{
+			"name": "AddProf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"matricula\":55,\"nome\":\"Ciclano\",\"endereco\":null,\"telefone\":\"99999\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/curso/1/addprof",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"curso",
+						"1",
+						"addprof"
+					]
+				},
+				"description": "Adiciona um professor em uma instituição de curso"
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/curso/1/excluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"curso",
+						"1",
+						"excluir"
+					]
+				},
+				"description": "Deleta uma instituição de curso"
+			},
+			"response": []
+		}
+	]
+}
